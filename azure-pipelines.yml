@@ -42,5 +42,5 @@ steps:
 - script: |
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
-    cd build/demoblazorci/dist/build/demoblazorci/dist
+    cd build/demoblazorci/dist/
     ls -la
