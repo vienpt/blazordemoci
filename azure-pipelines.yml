@@ -30,17 +30,17 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration Release --output build'
     zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
   displayName: Publish artifact
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: 'build'
     ArtifactName: 'drop'
 
 - script: |
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
-    cd $(Build.ArtifactStagingDirectory)/drop/s/demoblazorci/dist
+    cd build/demoblazorci/dist
     ls -la
