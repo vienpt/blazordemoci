@@ -43,5 +43,5 @@ steps:
     ls -la
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
-    cd bin/Release/netstandard2.1/dist/
+    cd build
     ls -la
