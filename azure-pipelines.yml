@@ -14,6 +14,9 @@ pool:
 # step 3: Publish artifact
 # step 4: script to push to github
 
+variables:
+- group: GitHubPATGroup
+
 steps:
 - task: UseDotNet@2
   displayName: Install latest .NET Core
@@ -38,7 +41,7 @@ steps:
     publishLocation: 'Container'
 
 - script: |
-    git config --global user.name = "viendev"
-    git config --global user.email = "viendev@outlook.com"
-    cd $(Build.ArtifactStagingDirectory)
-    ls -la /
+    git config --global user.name = "$NAME"
+    git config --global user.email = "$EMAIL"
+    cd $(Build.ArtifactStagingDirectory)/drop/demoblazorci/dist
+    ls -la
