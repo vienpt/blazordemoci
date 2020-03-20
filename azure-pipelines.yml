@@ -43,5 +43,5 @@ steps:
 - script: |
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
-    cd $(Build.ArtifactStagingDirectory)/drop/demoblazorci/dist
+    cd $(Build.ArtifactStagingDirectory)/demoblazorci/dist
     ls -la
