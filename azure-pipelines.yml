@@ -30,7 +30,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-    arguments: '-configuration Release --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
