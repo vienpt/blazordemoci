@@ -1,0 +1,44 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- development
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+# step 1: Install latest .NET Core SDK
+# step 2: Set up .NET publish command
+# step 3: Publish artifact
+# step 4: script to push to github
+
+steps:
+- task: UseDotNet@2
+  displayName: Install latest .NET Core
+  inputs:
+    packageType: 'sdk'
+    version: '3.1.200'
+    includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  displayName: Set up .NET publish command
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '-c Release -o $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: false
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish artifact
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- script: |
+    git config --global user.name = "viendev"
+    git config --global user.email = "viendev@outlook.com"
+    cd $(Build.ArtifactStagingDirectory)
+    ls -la /
