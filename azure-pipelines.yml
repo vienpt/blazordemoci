@@ -40,8 +40,13 @@ steps:
     ArtifactName: 'drop'
 
 - script: |
-    ls -la
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
     cd $(Build.ArtifactStagingDirectory)/s/demoblazorci/dist/
     ls -la
+    git init
+    git checkout -b gh-pages-from-action
+    git add -A
+    git commit -m "Create build $(Build.BuildId)"
+    git push -f https://$PAT@github.com/vienpt/blazordemoci gh-pages-from-action
+  displayName: 'Publish to GitHub'
