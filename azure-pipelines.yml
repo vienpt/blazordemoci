@@ -40,7 +40,8 @@ steps:
     ArtifactName: 'drop'
 
 - script: |
+    ls -la
     git config --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
-    cd build/demoblazorci/dist/
+    cd bin/Release/netstandard2.1/dist/
     ls -la
