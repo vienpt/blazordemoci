@@ -1,6 +1,9 @@
 # blazordemoci
 ![CI Github pages](https://github.com/vienpt/blazordemoci/workflows/CI%20Github%20pages/badge.svg)
 
+[![Azure pipelines build Status](https://dev.azure.com/viendev0909/blazor-ghpages/_apis/build/status/vienpt.blazordemoci?branchName=master)](https://dev.azure.com/viendev0909/blazor-ghpages/_build/latest?definitionId=9&branchName=master)
+
+
 ## Step by Step
 
 **Step 1: Add `.nojekyll` file**
