@@ -2,7 +2,7 @@ name: CI Github pages
 
 on:
   pull_request:
-    branches: azure-pipelines
+    branches: gh-pages-from-action
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: azure-pipelines
+        BASE_BRANCH: gh-pages-from-action
         BRANCH: gh-pages
         FOLDER: build
         CLEAN: true
