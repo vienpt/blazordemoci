@@ -45,8 +45,8 @@ steps:
     cd $(Build.ArtifactStagingDirectory)/s/demoblazorci/dist/
     ls -la
     git init
-    git checkout -b gh-pages-from-action
+    git checkout -b gh-pages
     git add -A
     git commit -m "Create build $(Build.BuildId)"
-    git push -f https://$PAT@github.com/vienpt/blazordemoci gh-pages-from-action
+    git push -f https://$PAT@github.com/vienpt/blazordemoci gh-pages
   displayName: 'Publish to GitHub'
