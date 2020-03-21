@@ -40,7 +40,7 @@ steps:
     ArtifactName: 'drop'
 
 - script: |
-    git config --global user.name = "$NAME"
+    git confi --global user.name = "$NAME"
     git config --global user.email = "$EMAIL"
     cd $(Build.ArtifactStagingDirectory)/s/demoblazorci/dist/
     ls -la
