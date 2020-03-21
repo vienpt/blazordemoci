@@ -8,7 +8,7 @@
 3 reason we need to understand why we should add .nojekyll to wwwroot content
 
 - nojekyll empty file is required when publishing to GitHub Pages
-- Jekyll will discard any files that begin with `_` (it will discard _webAssembly)
+- Jekyll will discard any files that begin with `_` (it will discard _framework/blazor-assembly.js)
 - GitHub Pages are powered by Jekyll behind the scenes
 
 **Step 2: Add `404.html` file**
